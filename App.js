@@ -1,47 +1,23 @@
 import React, {useState} from 'react';
-import {Platform, View, Alert, Text } from 'react-native';
-import {IosView} from './IosView';
-import {AndroidView} from './AndroidView';
+import {Platform} from 'react-native';
+import {ViewConditional} from './ViewConditional';
 import {BackendView} from './backendView';
-import { styles } from './Styles';
 export default App;
 function App() {
   const [currentView, setCurrentView] = useState("backend");
   switch(currentView){
     case "mainView":
-      if (Platform.OS === 'ios'){
-        return (
-            <IosView
-            currentView = {currentView}
-            setCurrentView = {setCurrentView}
-            />
-        );
-      }else if(Platform.OS === 'android'){
-        return (
-            <AndroidView
-            currentView = {currentView}
-            setCurrentView = {setCurrentView}
-            />
-        );
-      }    
+      return(
+        <ViewConditional device={Platform.OS}></ViewConditional>
+      );
     break;
     case "backend":
-     return(
-      <BackendView 
-      currentView = {currentView}
-      setCurrentView = {setCurrentView}
-      />
-     )
+      return(
+        <BackendView 
+        currentView = {currentView}
+        setCurrentView = {setCurrentView}
+        />
+      )
     break;
   }
-  
 }
-/*if (Platform.OS === 'ios'){
-  return (
-      <IosView/>
-  );
-}else if(Platform.OS === 'android'){
-  return (
-      <AndroidView/>
-  );
-}*/

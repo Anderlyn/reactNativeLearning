@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, ScrollView, View, Text, Alert} from 'react-native';
-import {ChangeViewButton} from './ChangeViewButton'
+import {ChangeViewButton} from './views/ChangeViewButton'
 import {styles} from './Styles';
 const BackendView = (props) => {
     return(

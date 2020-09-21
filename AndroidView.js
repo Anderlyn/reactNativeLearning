@@ -5,8 +5,7 @@ import {FlexDirectionBasics} from './FlexBasics'
 import { ViewsBasic } from './ViewsBasic';
 import {RandomNumber} from './RandomNumberButton';
 import {ModalHello} from './ModalHelloWorld';
-import {CheckBoxElement} from './Checkboxes';
-import {InputTest} from "./TextBoxes"
+import {CheckBoxElement} from './views/Checkboxes';
 import {ChangeViewButton} from './ChangeViewButton'
 const AndroidView = (props) => {
     return (
